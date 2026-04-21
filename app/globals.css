@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --blue-primary: #040440;
+  --orange-accent: #FF4400;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  
+  /* Spacing scale for consistency */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html, body {
+  background: var(--blue-primary);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Professional heading spacing */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Section spacing utilities */
+.section-padding {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+}

@@ -1,0 +1,54 @@
+import Link from "next/link";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
+
+export default function CustomerServiceCoursePage() {
+  return (
+    <>
+      <section className="py-20 px-6 bg-gray-50 text-black">
+        
+        <Link href="/courses" className="px-8 py-4 rounded-md bg-[#FF4400] text-white font-semibold hover:opacity-90 transition  hover:bg-white hover:text-[#FF4400]">← Back
+        </Link>
+
+        <h1 className="mt-6 mb-4 text-4xl pt-6 font-bold max-w-4xl">Customer Service Masterclass</h1>
+        <p className="mb-8 text-gray-600">
+          Beginner to Advanced · 100% Online
+        </p>
+
+        <p className="mb-10">
+          Build strong communication skills and deliver exceptional customer
+          experiences with Worldclass Tech Academy’s Customer Service Masterclass
+          — a structured online training program designed to prepare you for
+          professional customer-facing roles in just 12 weeks.
+        </p>
+
+        <h2 className="mb-4">Program Highlights</h2>
+        <ul className="list-disc pl-6 mb-10 space-y-2">
+          <li>Duration: 12 Weeks</li>
+          <li>Schedule: Weekdays & Weekends</li>
+          <li>Format: 100% Online</li>
+          <li>Learning Mode: Live Classes + Recorded Sessions</li>
+          <li>
+            Outcome: Job-ready communication skills & professional service
+            experience
+          </li>
+        </ul>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="px-8 py-4 rounded-md bg-[#FF4400] text-white font-semibold hover:opacity-90 transition  hover:bg-white hover:text-[#FF4400]">Download Brochure</button>
+          <a
+            href="https://wa.me/2349067441498"
+            target="_blank"
+            className="px-8 py-4 rounded-md bg-[#FF4400] text-white font-semibold hover:opacity-90 transition  hover:bg-white hover:text-[#FF4400] text-center"
+            rel="noopener noreferrer"
+          >
+            Talk to a Program Advisor
+          </a>
+        </div>
+      </section>
+
+      <CTA />
+      <Footer />
+    </>
+  );
+}
