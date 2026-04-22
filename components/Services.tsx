@@ -3,11 +3,12 @@ import Image from "next/image";
 
 const courses = [
   {
-    title: "Frontend Development",
-    slug: "frontend",
+    title: "Web Development",
+    slug: "web-development",
     description:
-      "Build modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, and modern tools.",
+      "Build modern, responsive, and user-friendly websites and web apps using modern tools.",
     image:"/images/frontend.png",
+    tutorPortfolio: "https://my-portfolio-f51rv5qqo-akosile-alexanders-projects.vercel.app/",
   },
   {
     title: "Cybersecurity",
@@ -15,6 +16,7 @@ const courses = [
     description:
       "Learn cybersecurity fundamentals, ethical hacking basics, and system protection techniques.",
       image:"/images/cybersecurity.png",
+      tutorPortfolio: "/tutors/cybersecurity",
   },
   {
     title: "Data Analysis",
@@ -22,6 +24,7 @@ const courses = [
     description:
       "Analyze and visualize data using Excel, SQL, Python, and modern analytics tools.",
     image:"/images/data-analysis.png",
+    tutorPortfolio: "/tutors/data-analysis",
   },
   {
     title: "Customer Service",
@@ -29,6 +32,7 @@ const courses = [
     description:
       "Develop professional communication skills for remote and customer-facing roles.",
     image:"/images/customer-service.png",
+    tutorPortfolio: "/tutors/customer-service",
   },
 ];
 
@@ -42,15 +46,17 @@ export default function CoursesPage() {
         </div>
         <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           {courses.map((course) => (
-            <Link
+            <div
               key={course.slug}
-              href={`/courses/${course.slug}`}
-              className="border rounded-xl p-6 hover:shadow-md transition hover:bg-[#FF4400]"
+              className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col h-full bg-white"
             >
-            <Image src={course.image} alt={course.title} width={400} height={200} className="mb-4 rounded-md"/>
-              <h1 className="mb-2 font-bold text-2xl">{course.title}</h1>
-              <p>{course.description}</p>
-            </Link>
+              <Image src={course.image} alt={course.title} width={400} height={200} className="mb-4 rounded-lg object-cover w-full h-48"/>
+              <h1 className="mb-3 font-bold text-xl text-gray-900">{course.title}</h1>
+              <p className="text-gray-600 mb-6 grow text-sm leading-relaxed">{course.description}</p>
+              <Link href={course.tutorPortfolio} className="w-full px-4 py-3 rounded-md bg-[#FF4400] text-white font-semibold hover:bg-[#e63d00] transition duration-200 text-center">
+                View Tutor Portfolio
+              </Link>
+            </div>
           ))}
         </div>
       </section>
