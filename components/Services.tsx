@@ -34,6 +34,14 @@ const courses = [
     image:"/images/customer-service.png",
     tutorPortfolio: "/tutors/customer-service",
   },
+  {
+    title: "E-commerce Management",
+    slug: "e-commerce-management",
+    description:
+      "Learn to manage and grow your online store with effective strategies and tools.",
+    image:"/images/e-commerce.png",
+    tutorPortfolio: "/tutors/e-commerce-management",
+  },
 ];
 
 export default function CoursesPage() {

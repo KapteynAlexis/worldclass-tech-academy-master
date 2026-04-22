@@ -32,6 +32,13 @@ const courses = [
       "Develop professional communication skills for remote and customer-facing roles.",
     image:"/images/customer-service.png",
   },
+  {
+    title: "E-commerce Management",
+    slug: "e-comerce",
+    description:
+      "Learn to manage and grow your online store with effective strategies and tools.",
+    image:"/images/e-commerce.png",
+  },
 ];
 
 export default function CoursesPage() {
