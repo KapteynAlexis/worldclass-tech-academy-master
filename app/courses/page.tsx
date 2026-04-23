@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const courses = [
   {
@@ -36,35 +39,99 @@ const courses = [
     title: "E-commerce Management",
     slug: "e-comerce",
     description:
-      "Learn to manage and grow your online store with effective strategies and tools.",
+      " Learn how to build, launch, and scale profitable online stores using modern tools like Shopify, product research strategies, digital marketing, and sales optimization techniques.",
     image:"/images/e-commerce.png",
   },
 ];
 
 export default function CoursesPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="py-20 px-6 bg-white text-black">
-        <div className="mb-6 flex flex-col items-center justify-center text-center">
-            <h1 className="mb-4 text-4xl font-bold">Our Online Courses</h1>
-            <p className="max-w-2xl mb-12">
-              Our programs are designed to meet current industry demands and prepare
-              you for real-world opportunities in tech.
-            </p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+        <motion.div
+          className="mb-6 flex flex-col items-center justify-center text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
+          <motion.h1
+            className="mb-4 text-4xl font-bold"
+            variants={headerVariants}
+          >
+            Our Online Courses
+          </motion.h1>
+          <motion.p className="max-w-2xl mb-12" variants={itemVariants}>
+            Our programs are designed to meet current industry demands and prepare
+            you for real-world opportunities in tech.
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {courses.map((course) => (
-            <Link
+            <motion.div
               key={course.slug}
-              href={`/courses/${course.slug}`}
-              className="border rounded-xl p-6 hover:shadow-md transition hover:bg-[#FF4400]"
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-            <Image src={course.image} alt={course.title} width={400} height={200} className="mb-4 rounded-md"/>
-              <h1 className="mb-2 font-bold text-2xl">{course.title}</h1>
-              <p>{course.description}</p>
-            </Link>
+              <Link
+                href={`/courses/${course.slug}`}
+                className="border rounded-xl p-6 hover:shadow-md transition hover:bg-[#FF4400] block h-full"
+              >
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={400}
+                  height={200}
+                  className="mb-4 rounded-md"
+                />
+                <h1 className="mb-2 font-bold text-2xl">{course.title}</h1>
+                <p>{course.description}</p>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <CTA />

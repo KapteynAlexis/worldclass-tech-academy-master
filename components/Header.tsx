@@ -25,6 +25,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <Link href="/" className="hover:text-[#FF4400] hover:bg-white p-4 rounded-md font-bold">Home</Link>
           <Link href="/courses" className="hover:text-[#FF4400] hover:bg-white p-4 rounded-md font-bold">Courses</Link>
+          <Link href="/services" className="hover:text-[#FF4400] hover:bg-white p-4 rounded-md font-bold">Services</Link>
           <Link href="https://wa.me/2349067441498" className="hover:text-[#FF4400] hover:bg-white p-4 rounded-md font-bold">Contact</Link>
         </nav>
 
@@ -50,6 +51,7 @@ export default function Header() {
           <div className="flex flex-col gap-4 p-6">
             <Link href="/" className="text-white hover:text-[#FF4400] font-bold py-2" onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="/courses" className="text-white hover:text-[#FF4400] font-bold py-2" onClick={() => setIsOpen(false)}>Courses</Link>
+            <Link href="/services" className="text-white hover:text-[#FF4400] font-bold py-2" onClick={() => setIsOpen(false)}>Services</Link>
             <Link href="#contact" className="text-white hover:text-[#FF4400] font-bold py-2" onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
         </nav>

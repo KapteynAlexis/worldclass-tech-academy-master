@@ -3,12 +3,11 @@ import Image from "next/image";
 
 const courses = [
   {
-    title: "Web Development",
-    slug: "web-development",
+    title: "Frontend Development",
+    slug: "frontend",
     description:
-      "Build modern, responsive, and user-friendly websites and web apps using modern tools.",
+      "Build modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, and modern tools.",
     image:"/images/frontend.png",
-    tutorPortfolio: "https://my-portfolio-f51rv5qqo-akosile-alexanders-projects.vercel.app/",
   },
   {
     title: "Cybersecurity",
@@ -16,7 +15,6 @@ const courses = [
     description:
       "Learn cybersecurity fundamentals, ethical hacking basics, and system protection techniques.",
       image:"/images/cybersecurity.png",
-      tutorPortfolio: "/tutors/cybersecurity",
   },
   {
     title: "Data Analysis",
@@ -24,7 +22,6 @@ const courses = [
     description:
       "Analyze and visualize data using Excel, SQL, Python, and modern analytics tools.",
     image:"/images/data-analysis.png",
-    tutorPortfolio: "/tutors/data-analysis",
   },
   {
     title: "Customer Service",
@@ -32,15 +29,13 @@ const courses = [
     description:
       "Develop professional communication skills for remote and customer-facing roles.",
     image:"/images/customer-service.png",
-    tutorPortfolio: "/tutors/customer-service",
   },
   {
     title: "E-commerce Management",
-    slug: "e-commerce-management",
+    slug: "e-comerce",
     description:
-      "Learn to manage and grow your online store with effective strategies and tools.",
+      " Learn how to build, launch, and scale profitable online stores using modern tools like Shopify, product research strategies, digital marketing, and sales optimization techniques.",
     image:"/images/e-commerce.png",
-    tutorPortfolio: "/tutors/e-commerce-management",
   },
 ];
 
@@ -48,23 +43,24 @@ export default function CoursesPage() {
   return (
     <>
       <section className="py-20 px-6 bg-white text-black">
-        <div className="mb-12 flex flex-col max-w-6xl mx-auto">
-            <h1 className="text-4xl font-bold">Services we Offer</h1>
-        
+        <div className="mb-6 flex flex-col items-center justify-center text-center">
+            <h1 className="mb-4 text-4xl font-bold">Our Online Courses</h1>
+            <p className="max-w-2xl mb-12">
+              Our programs are designed to meet current industry demands and prepare
+              you for real-world opportunities in tech.
+            </p>
         </div>
-        <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           {courses.map((course) => (
-            <div
+            <Link
               key={course.slug}
-              className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300 flex flex-col h-full bg-white"
+              href={`/courses/${course.slug}`}
+              className="border rounded-xl p-6 hover:shadow-md transition hover:bg-[#FF4400]"
             >
-              <Image src={course.image} alt={course.title} width={400} height={200} className="mb-4 rounded-lg object-cover w-full h-48"/>
-              <h1 className="mb-3 font-bold text-xl text-gray-900">{course.title}</h1>
-              <p className="text-gray-600 mb-6 grow text-sm leading-relaxed">{course.description}</p>
-              <Link href={course.tutorPortfolio} className="w-full px-4 py-3 rounded-md bg-[#FF4400] text-white font-semibold hover:bg-[#e63d00] transition duration-200 text-center">
-                View Tutor Portfolio
-              </Link>
-            </div>
+            <Image src={course.image} alt={course.title} width={400} height={200} className="mb-4 rounded-md"/>
+              <h1 className="mb-2 font-bold text-2xl">{course.title}</h1>
+              <p>{course.description}</p>
+            </Link>
           ))}
         </div>
       </section>
