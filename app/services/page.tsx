@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 const containerVariants = {
@@ -408,7 +407,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTA />
+      
       <Footer />
     </>
   );

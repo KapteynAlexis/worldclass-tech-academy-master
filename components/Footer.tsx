@@ -50,6 +50,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/"className="hover:text-[#FF4400] transition">Home</Link></li>
             <li><Link href="/courses" className="hover:text-[#FF4400] transition">Courses</Link></li>
+            <li><Link href="/services" className="hover:text-[#FF4400] transition">Services</Link></li>
             <li><Link href="/" className="hover:text-[#FF4400] transition">About Us</Link></li>
             <li><Link href="https://wa.me/2349067441498" className="hover:text-[#FF4400] transition">Contact Us</Link></li>
           </ul>
