@@ -26,14 +26,15 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[90vh] flex items-center justify-center px-6">
+    <section className="relative h-screen w-full flex items-center justify-center px-6">
       {/* Background Image */}
       <Image
-        src="/images/hero-bg.png"
+        src="/images/hero-vid.gif"
         alt="Worldclass Tech Academy"
         fill
         priority
         className="object-cover"
+        unoptimized
       />
 
       {/* Overlay */}
