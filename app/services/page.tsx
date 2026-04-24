@@ -230,8 +230,8 @@ export default function ServicesPage() {
                     Performance Focused
                   </li>
                 </ul>
-                <Link href="https://wa.me/2349067441498" className="text-[#FF4400] font-bold hover:underline">
-                  Learn More →
+                <Link href="/services/web-development" className="text-[#FF4400] font-bold hover:underline">
+                  Start Your Inquiry →
                 </Link>
               </div>
             </motion.div>
